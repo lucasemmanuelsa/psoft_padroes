@@ -40,8 +40,14 @@ public class Cliente {
         System.out.println("----------Desfazendo---------");
         controleRemoto.undo();
 
-        controleRemoto.undo();
+        System.out.println("--------Testando volume--------");
+        VolumeSetCommand volumeSetCommand2 = new VolumeSetCommand(televisao, 100);
+        controleRemoto.setCommand(volumeSetCommand2);
+        controleRemoto.executeCommand();
 
+        System.out.println("--------Testando volume--------");
+        controleRemoto.setCommand(volumeUpCommand);
+        controleRemoto.executeCommand();
 
     }
 }
