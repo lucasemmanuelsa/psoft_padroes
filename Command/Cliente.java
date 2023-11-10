@@ -11,7 +11,6 @@ public class Cliente {
     
         VolumeUpCommand volumeUpCommand = new VolumeUpCommand(televisao);
         VolumeDownCommand volumeDownCommand = new VolumeDownCommand(televisao);
-
         
         controleRemoto.setCommand(turnon);
         controleRemoto.executeCommand();
@@ -32,6 +31,17 @@ public class Cliente {
         controleRemoto.executeCommand();
         System.out.println("---------Desfazendo----------");
         controleRemoto.undo();
+
+        System.out.println("--------Testando volume--------");
+        VolumeSetCommand volumeSetCommand = new VolumeSetCommand(televisao, 20);
+        controleRemoto.setCommand(volumeSetCommand);
+        controleRemoto.executeCommand();
+
+        System.out.println("----------Desfazendo---------");
+        controleRemoto.undo();
+
+        controleRemoto.undo();
+
 
     }
 }

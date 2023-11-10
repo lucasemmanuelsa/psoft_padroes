@@ -34,4 +34,11 @@ public class Televisao {
         System.out.println("volume diminuido para: " + volume);
     }
 
+    public void setVolume(int volume){
+        this.volume = volume;
+    }
+
+    public int getVolume(){
+        return this.volume;
+    }
 }
